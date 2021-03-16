@@ -2,6 +2,13 @@
 
 /* variables */
 
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 :root {
     --gradient: linear-gradient(100deg, #eecda3, #ef629f);
 }
@@ -11,11 +18,13 @@
 * {
     margin: 0;
     padding: 0;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
 *::before,
 *::after {
+    -webkit-box-sizing: inherit;
     box-sizing: inherit;
 }
 
@@ -23,6 +32,8 @@
     color: azure;
     font-size: 1.2rem;
     margin-bottom: 4rem;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
     transition: all .3s ease;
 }
 
@@ -30,7 +41,11 @@ body {
     min-height: 100vh;
     font-family: 'Lato', Arial, Helvetica, sans-serif;
     font-size: 62.5%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     margin: 10rem 0rem;
     background-image: var(--gradient);
@@ -47,13 +62,21 @@ body {
 .complete {
     text-decoration: line-through;
     opacity: .4;
+    -webkit-transform: scale(.9);
+    -ms-transform: scale(.9);
     transform: scale(.9);
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
     transition: all .3s ease;
 }
 
 .delete {
+    -webkit-transform: translateY(9rem) rotateZ(20deg);
+    -ms-transform: translateY(9rem) rotate(20deg);
     transform: translateY(9rem) rotateZ(20deg);
     opacity: 0;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
     transition: all .3s ease;
 }
 
@@ -72,6 +95,8 @@ header {
 }
 
 form {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin-bottom: 1rem;
 }
@@ -98,6 +123,8 @@ h1 {
     font-size: 1.1rem;
     background-color: rgb(245, 113, 89);
     pointer-events: none;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
     transition: all .3s ease;
     cursor: pointer;
 }
@@ -119,6 +146,22 @@ select {
     width: 20rem;
 }
 
+.todo-input::-webkit-input-placeholder {
+    color: #333;
+}
+
+.todo-input::-moz-placeholder {
+    color: #333;
+}
+
+.todo-input:-ms-input-placeholder {
+    color: #333;
+}
+
+.todo-input::-ms-input-placeholder {
+    color: #333;
+}
+
 .todo-input::placeholder {
     color: #333;
 }
@@ -127,6 +170,8 @@ select {
     border-radius: 0 3px 3px 0;
     background-color: rgb(245, 113, 89);
     color: azure;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
     transition: all .3s ease;
     cursor: pointer;
 
@@ -150,8 +195,14 @@ select {
 
 
 .todo-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     gap: .5rem;
     font-size: 1.6rem;
@@ -167,6 +218,8 @@ select {
 }
 
 .todo-item {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
     flex: 1;
 }
 
@@ -180,8 +233,15 @@ select {
 
 @media (max-width: 500px) {
     form {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
         align-items: flex-start;
     }
 
